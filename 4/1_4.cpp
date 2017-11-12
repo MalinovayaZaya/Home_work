@@ -12,7 +12,7 @@ cin >> A[i];
 }
 int temp[N];
 for (int i=0;i<N;i++){
-        if (A[i]==0)temp[i]=-1
+        if (A[i]==0)temp[i]=-1;
         if (A[i]==3||A[i]==2) temp[i]=0;
          for (int q=2; q*q<=A[i]; q++) {
           if (A[i]%q==0) temp[i]=1;
