@@ -31,7 +31,7 @@ if (temp[i]==0) {
   cout << "Array without repeats prime numbers: " << endl;
 for (int i=0;i<N;i++){
  if (A[i]!=0) cout << A[i] << endl;
-if(temp==-1) cout << 0 << endl;
+if(temp[i]==-1) cout << 0 << endl;
 }
 delete []A;
 delete []temp;
