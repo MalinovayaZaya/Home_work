@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool pr(int c){
+if(c == 1) return 0;
+if(c == 2) return 1;
+for(int i = 2; i <= sqrt(c); ++i){
+if(c%i== 0) return 0;
+}
+return 1;
+}
+
+int main()
+{
+    int n;
+char*a=new char[n];
+int*p=new int[n]
+for(int i=0;i<n;i++){
+    cin >> a[i];
+    if(a[i]!='!'){
+if(pr(a[i])==1){
+    cout << a[i] << "-PR."<< endl;
+}
+else{
+    if(pr(a[i])==0||a[i]==1){
+        cout << a[i] << "-COMP." << endl;}
+        else{
+            cout << a[i] << "-Not A NUMB.";
+        }
+    }
+}
+}
+delete []a;
+    return 0;
+}
