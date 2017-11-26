@@ -1,59 +1,39 @@
 //Напишите программу, которая выводит все натуральные числа-палиндромы длины n, делящиеся на 9, в порядке возрастания.
 #include <iostream>
-#include <cmath>
+#include <math.h>
 using namespace std;
-
-int palindrom (int n){
-if(n==1)
-cout << 9 << " is palindrom multiple of 9";
-else{
-int p,sum;
-p=pow(10,n)-pow(10,n-1);
-int**a=new int*[p];
-sum=pow(10,n-1);
-while (sum%9!=0){
-sum=sum+1;
+bool palindrom(long long N) {
+long long a, b = 0;
+for (a = N; a > 0; a /= 10)
+b = b * 10 + a % 10;
+return b == N;
 }
-for (int i=0;i<p/9;i++){
-a[i]=new int [n];
-sum=sum+9;
-if (sum%10!=0){
-for (int j=0;j<n;j++){
-a[i][j]=(sum%(int)(pow((float)10,(j+1))))/pow((float)10,j);
+void palindrom(long long n){
+if (n == 1){
+cout << 9;
+return;
 }
+if (n == 2){
+cout << 99;
+return;
 }
-else {continue;}
+long long A = 0;
+if (n % 2 == 0)
+A = pow(10, n - 1) + 1 + 88 * (pow(10, n / 2 - 1));
+else
+A = pow(10, n - 1) + 1 + 7 * (pow(10, n / 2));
+long long M = pow(10, n);
+for (A; A < M; A += 9) {
+if (palindrom(A) == true) {
+cout << A << "  is a palindrome which is divided into 9 " << endl;
 }
-int d,l;
-int k,h,c;
-d=p/9-p%10;
-int u[d];
-k=n/2;
-for (int i=0;i<d;i++){
-        u[i]=0;
-h=n-1;
-        for (int j=0;j<k;j++){
-if (a[i][j]==a[i][h]) {u[i]=u[i]+1;}
-else {u[i]=0;continue;}
-h=h-1;
-}
-}
-for (int i=0;i<d;i++){
-        for (int j=0;j<n;j++){
-if (k==u[i]) cout << a[i][j];}
-if (u[i]==k) cout << "  is palindrom multiple of 9" << endl;
-}
-for (int i = 0; i < p; i++)
-{
-  delete [] a[i];
-}
-delete [] a;
 }
 }
 int main(){
-int n;
-cout << "Enter n= ";
-cin>>n;
+long long n;
+cout << "Enter the length of the palindromes :";
+cin >> n;
 palindrom(n);
 return 0;
 }
+
